@@ -1,11 +1,16 @@
 package com.example.TheCalculator.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CalculatorEntity {
 
     private String input;
 
     private Double solution;
+
+
+    public CalculatorEntity(){}
 
     public CalculatorEntity(String input) {
         this.input = input;

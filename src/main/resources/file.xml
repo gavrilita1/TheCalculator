@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calculatorEntity>
+    <calculators>
+    <input>((4-2^3+1)*-sqrt(3*3+4*4))/2</input>
+    <solution></solution>
+    </calculators>
+</calculatorEntity>

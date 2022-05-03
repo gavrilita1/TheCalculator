@@ -197,41 +197,4 @@ public class Algoritm {
         }.run();
     }
 
-
-
-
-
 }
-
-
-
-
-
-
-/*
-Stack<Character> operations = new Stack<>();
-Stack<Double> values = new Stack<Double>();
-
-for (int i = 0; i < input.length(); ++i) {
-                char s = input.charAt(i);
-                if (s == '(') ;
-                else if (s == '+') operations.push(s);
-                else if (s == '-') operations.push(s);
-                else if (s == '*') operations.push(s);
-                else if (s == '/') operations.push(s);
-                    //else if (s == 'sqrt') operations.push(s);
-                else if (s == ')') {
-                    Character operation = operations.pop();
-                    double v = values.pop();
-                    if (operation.equals("+")) v = values.pop() + v;
-                    else if (operation.equals("-")) v = values.pop() - v;
-                    else if (operation.equals("*")) v = values.pop() * v;
-                    else if (operation.equals("/")) v = values.pop() / v;
-                    //else if (operation.equals("sqrt")) v = Math.sqrt(v);
-                    values.push(v);
-                } else values.push(Double.parseDouble(String.valueOf(s)));
-            }
-            System.out.println(values.pop( ));
-
-return values.pop();
-            */
