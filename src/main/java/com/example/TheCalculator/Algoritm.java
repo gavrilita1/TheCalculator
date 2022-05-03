@@ -166,12 +166,13 @@ public class Algoritm {
 
                 double number;
                 startPosition = this.position;
-                //System.out.println(startPosition);
                 if (findChar('(')) {
                     number = additionSubtraction();
                     if (!findChar(')')) throw new RuntimeException("Missing ')'");
-                } else if ((ch >= '0' && ch <= '9') || ch == '.') {
+                }
+                else if ((ch >= '0' && ch <= '9') || ch == '.') {
                     while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
+
                     number =Double.parseDouble(input.substring(startPosition, this.position));
                     numbers.add(number);
 
