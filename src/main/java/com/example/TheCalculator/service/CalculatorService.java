@@ -5,7 +5,9 @@ import com.example.TheCalculator.entity.CalculatorEntity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -20,12 +22,6 @@ public class CalculatorService {
     private String input;
 
     public Double getCalculatorSolution(String input) {
-        CalculatorEntity calculator = new CalculatorEntity(input);
-        calculator.setSolution(Algoritm.generateSolution(input));
-        return calculator.getSolution();
-    }
-
-    public Double getCalculatorSolutionWithoutStep(String input) {
         CalculatorEntity calculator = new CalculatorEntity(input);
         calculator.setSolution(Algoritm.generateSolutionWithoutSteps(input));
         return calculator.getSolution();

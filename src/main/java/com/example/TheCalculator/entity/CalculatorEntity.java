@@ -1,8 +1,5 @@
 package com.example.TheCalculator.entity;
 
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class CalculatorEntity {
 
     private String input;

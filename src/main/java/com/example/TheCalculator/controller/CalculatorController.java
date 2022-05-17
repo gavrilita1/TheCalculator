@@ -16,19 +16,13 @@ public class CalculatorController {
     private CalculatorService calculatorService;
 
     @CrossOrigin(origins = {"*"})
-    @GetMapping("/webStep")
-    public Double calculateStep(@RequestBody String input){
+    @PostMapping("/web")
+    public Double calculate(@RequestBody String input){
         return calculatorService.getCalculatorSolution(input);
     }
 
     @CrossOrigin(origins = {"*"})
-    @GetMapping("/web")
-    public Double calculate(@RequestBody String input){
-        return calculatorService.getCalculatorSolutionWithoutStep(input);
-    }
-
-    @CrossOrigin(origins = {"*"})
-    @GetMapping("/xml")
+    @PostMapping("/xml")
     public double writeXml(@RequestBody String file) throws IOException {
         return calculatorService.writeInXml(new File(file));
     }
