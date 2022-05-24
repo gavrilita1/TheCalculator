@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Algoritm {
 
     public static double generateSolutionWithoutSteps(final String input) {
+        assert (!input.isBlank() && input.charAt(0)>0 && input != null) : "file is invaid";
         return new Object() {
             int position = -1;
             int ch;

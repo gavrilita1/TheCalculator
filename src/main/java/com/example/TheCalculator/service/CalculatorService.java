@@ -22,12 +22,16 @@ public class CalculatorService {
     private String input;
 
     public Double getCalculatorSolution(String input) {
+        assert (!input.isBlank() && input.charAt(0)>0 && input != null):  "input is invaid";
         CalculatorEntity calculator = new CalculatorEntity(input);
         calculator.setSolution(Algoritm.generateSolutionWithoutSteps(input));
-        return calculator.getSolution();
+        Double result = calculator.getSolution();
+        assert (!result.equals(null)):  "Value of " + result + " is null ";
+        return result;
     }
 
     public double writeInXml(File file){
+        assert (file.exists() && file.canRead()):  "file is invaid";
         try {
             ObjectMapper mapper = new XmlMapper();
             InputStream inputStream = new FileInputStream(file);
@@ -38,7 +42,9 @@ public class CalculatorService {
                 System.out.println("The input is "+c.getInput());
                 this.input=c.getInput();
             }
-            return(Algoritm.generateSolutionWithoutSteps(input));
+            Double result = Algoritm.generateSolutionWithoutSteps(input);
+            assert (!result.equals(null)):  "result is invaid";
+            return result;
         }
         catch(Exception e) {
             e.printStackTrace();

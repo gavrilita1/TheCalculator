@@ -18,12 +18,18 @@ public class CalculatorController {
     @CrossOrigin(origins = {"*"})
     @PostMapping("/web")
     public Double calculate(@RequestBody String input){
-        return calculatorService.getCalculatorSolution(input);
+        assert (!input.isBlank() && input.charAt(0)>0.0 && input != null):  "input is invaid";
+        Double result = calculatorService.getCalculatorSolution(input);
+        assert (!result.equals(null)):  "result is invaid";
+        return result;
     }
 
     @CrossOrigin(origins = {"*"})
     @PostMapping("/xml")
     public double writeXml(@RequestBody String file) throws IOException {
-        return calculatorService.writeInXml(new File(file));
+        assert (!file.isBlank() && file.charAt(0)>0 && file != null):  "input is invaid";
+        Double result = calculatorService.writeInXml(new File(file));
+        assert (!result.equals(null)):  "result is invaid";
+        return result;
     }
 }
